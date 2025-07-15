@@ -1,0 +1,207 @@
+Software Design: 
+ Software design is the process of transforming user requirements into a suitable form, which 
+helps the programmer in software coding and implementation. During the software design phase, 
+the design document is produced, based on the customer requirements as documented in the SRS 
+document. Hence, this phase aims to transform the SRS document into a design document.  
+ 
+The following items are designed and documented during the design phase:  
+1. Different modules are required. 
+2. Control relationships among modules. 
+3. Interface among different modules. 
+4. Data structure among the different modules. 
+5. Algorithms are required to be implemented among the individual modules. 
+ 
+  Objectives of Software Design 
+1. Correctness: A good design should be correct i.e., it should correctly implement all the 
+functionalities of the system. 
+2. Efficiency: A good software design should address the resources, time, and cost optimization 
+issues. 
+4. Flexibility: A good software design should have the ability to adapt and accommodate 
+changes easily. It includes designing the software in a way, that allows for modifications, 
+enhancements, and scalability without requiring significant rework.  
+5. Understandability: A good design should be easily understandable, it should be modular, 
+and all the modules are arranged in layers. 
+5. Completeness: The design should have all the components like data structures, 
+modules, external interfaces, etc. 
+6. Maintainability: A good software design aims to create a system that is easy to understand, 
+modify, and maintain over time. This involves using modular and well-structured design 
+2  
+principles Maintainability in Software and design also enables developers to fix bugs, enhance 
+features, and adapt the software to changing requirements without excessive effort or introducing 
+new issues.  
+ 
+Software Design Concepts: 
+software design concepts are fundamental principles that guide the development and 
+structure of software. These concepts help ensure that software is well-organized, efficient, 
+maintainable, and scalable. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    Abstraction : 
+ Abstraction simply means to hide the details to reduce complexity and increase efficiency or 
+quality. Different levels of Abstraction are necessary and must be applied at each stage of the 
+design process so that any error that is present can be removed to increase the efficiency of the 
+software solution and to refine the software solution. 
+    Modularity (subdivide the system): 
+ Modularity simply means dividing the system or project into smaller parts to reduce the 
+complexity of the system or project. In the same way, modularity in design means subdividing a 
+system into smaller parts so that these parts can be created independently and then use these parts 
+in different systems to perform different functions. It is necessary to divide the software into 
+components known as modules. 
+Architecture (design a structure of something): Architecture simply means a technique to 
+design a structure of something. Architecture in designing software is a concept that focuses on 
+various elements and the data of the structure. These components interact with each other and 
+use the data of the structure in architecture. 
+ 
+ 
+ 
+ 
+3  
+ Refinement- (removes impurities) 
+  Refinement simply means to refine something to remove any impurities if present and 
+increase the quality. The refinement concept of software design is actually a process of 
+developing or presenting the software or system in a detailed manner that means to elaborate a 
+system or software. Refinement is very necessary to find out any error if present and then to 
+reduce it. 
+ Pattern- (a Repeated form) 
+  The pattern simply means a repeated form or design in which the same shape is repeated 
+several times to form a pattern. The pattern in the design process means the repetition of a solution 
+to a common recurring problem within a certain context. 
+ Information Hiding – Hide the Information 
+  Information hiding simply means to hide the information so that it cannot be accessed by an 
+unwanted party. In software design, information hiding is achieved by designing the modules in 
+a manner that the information gathered or contained in one module is hidden and can’t be 
+accessed by any other modules. 
+ Refactoring-( Reconstruct something ) 
+  Refactoring simply means reconstructing something in such a way that it does not affect the 
+behavior of any other features. Refactoring in software design means reconstructing the design 
+to reduce complexity and simplify it without impacting the behavior or its functions. Fowler has 
+defined refactoring as “the process of changing a software system in a way that it won’t impact 
+the behavior of the design and improves the internal structure”. 
+ Software Design Process: 
+ The design phase of software development deals with transforming the customer requirements 
+as described in the SRS documents into a form implementable using a programming language. 
+The software design process can be divided into the following three levels or phases of design: 
+ Interface Design 
+ Architectural Design 
+ Detailed Design 
+ Elements of a System 
+1. Architecture: This is the conceptual model that defines the structure, behavior, and views of 
+a system. We can use flowcharts to represent and illustrate the architecture. 
+2. Modules: These are components that handle one specific task in a system. A combination of 
+the modules makes up the system. 
+3. Components: This provides a particular function or group of related functions. They are 
+made up of modules. 
+4. Interfaces: This is the shared boundary across which the components of a system exchange 
+information and relate.  
+5. Data: This is the management of the information and data flow. 
+4  
+ 
+ Interface Design in the Software Process 
+Interface design in software engineering refers to the process of defining how different 
+system components, users, and external systems interact with the software. A well-designed 
+interface ensures seamless communication between various parts of the system, improves 
+usability, and enhances the overall user experience. 
+ Types: 
+ User Interface (UI) 
+ The visual and interactive part of the software that users interact with. 
+ Includes elements like buttons, menus, forms, and dashboards. 
+ Example: A mobile banking app’s user interface. 
+ Application Programming Interface (API) 
+ Defines how software components communicate programmatically. 
+ Example: RESTful APIs used for web applications. 
+ Software-to-Software Interface 
+ Allows different software systems to communicate and exchange data. 
+ Example: A payment gateway integrating with an e-commerce platform. 
+ Hardware Interface 
+ Defines interactions between software and hardware components. 
+ Example: Drivers that allow an operating system to communicate with a printer. 
+ 
+Principles of Good Interface Design 
+5  
+ Simplicity – Keep the interface clean and user-friendly. 
+ Consistency – Maintain uniform design patterns across the application. 
+ Responsiveness – Ensure the interface adapts to different devices and screen sizes. 
+ Feedback Mechanisms – Provide clear responses to user actions (e.g., loading indicators, 
+error messages). 
+ Error Prevention and Handling – Guide users to prevent mistakes and provide meaningful 
+error messages. 
+Architectural design : 
+Architectural design in software engineering refers to the high-level structure of a software 
+system. It defines how different components interact, ensuring the system is scalable, 
+maintainable, and efficient. Architectural design serves as a blueprint for software development, 
+guiding implementation and integration. 
+ 
+ Importance of Architectural Design: 
+ Scalability – Supports future growth. 
+ Maintainability – Simplifies debugging and updates. 
+ Performance – Ensures efficient system operation. 
+ Security – Helps define secure access and communication. 
+ Reusability – Encourages component reuse across projects. 
+ 
+ Detailed Design: 
+  This Phase involves defining the internal logic of modules, specifying data structures, 
+designing algorithms, and detailing interfaces between system components. This phase follows 
+architectural design, where the system's overall structure is established, and precedes 
+implementation, where actual coding takes place. 
+ 
+ Benefits of Detailed Design 
+Reduces complexity by breaking down high-level architecture. 
+ 
+Improves code maintainability by ensuring clarity in implementation. 
+ 
+Enhances reusability by defining modular and reusable components. 
+ 
+Prevents future issues by incorporating security and error handling early. 
+ 
+ 
+Design Principles: 
+6  
+ There are several principles that are used to organize and arrange the structural components 
+of Software design. Software Designs in which these principles are applied affect the content and 
+the working process of the software from the beginning. 
+ 
+ 
+ Principles Of Software Design : 
+1. Should not suffer from “Tunnel Vision” While designing the process, it should not suffer 
+from “tunnel vision” which means that is should not only focus on completing or achieving 
+the aim but on other effects also. 
+2. Traceable to analysis model  
+The design process should be traceable to the analysis model which means it should satisfy all 
+the requirements that software requires to develop a high-quality product. 
+3. Should not “Reinvent The Wheel”  
+The design process should not reinvent the wheel that means it should not waste time or 
+effort in creating things that already exist. Due to this, the overall development will get 
+increased. 
+4. Minimize Intellectual distance – 
+The design process should reduce the gap between real-world problems and software solutions 
+for that problem meaning it should simply minimize intellectual distance. 
+5. Exhibit uniformity and integration – 
+The design should display uniformity which means it should be uniform throughout the 
+process without any change. Integration means it should mix or combine all parts of software 
+i.e. subsystems into one system. 
+ 
+6. Accommodate change  
+The software should be designed in such a way that it accommodates the change implying 
+7  
+that the software should adjust to the change that is required to be done as per the user’s 
+need. 
+7. Degrade gently – 
+The software should be designed in such a way that it degrades gracefully which means it 
+should work properly even if an error occurs during the execution. 
+8. Assessed or quality – 
+The design should be assessed or evaluated for the quality meaning that during the evaluation, 
+the quality of the design needs to be checked and focused on. 
+9. Review to discover errors – 
+The design should be reviewed which means that the overall evaluation should be done to 
+check if there is any error present or if it can be minimized. 
+10. Design is not coding and coding is not design – 
+Design means describing the logic of the program to solve any problem and coding is a type of 
+language that is used for the implementation of a design.
