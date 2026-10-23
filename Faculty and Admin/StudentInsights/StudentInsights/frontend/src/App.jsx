@@ -38,9 +38,9 @@ function App() {
     const fetchData = async () => {
       try {
         const [studentsRes, classesRes, quizzesRes] = await Promise.all([
-          fetch('http://localhost:8002/api/student'),
-          fetch('http://localhost:8002/api/classes'),
-          fetch('http://localhost:8002/api/quizzes'),
+          fetch('http://localhost:5000/api/insights/student'),
+          fetch('http://localhost:5000/api/insights/classes'),
+          fetch('http://localhost:5000/api/insights/quizzes'),
         ]);
 
         const [studentsData, classesData, quizzesData] = await Promise.all([

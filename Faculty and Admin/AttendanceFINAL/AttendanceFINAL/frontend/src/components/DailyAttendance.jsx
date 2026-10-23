@@ -33,7 +33,7 @@ const DailyAttendance = ({ setActiveAttendanceView }) => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const res = await fetch('http://localhost:8003/api/students');
+        const res = await fetch('http://localhost:5000/api/attendance/students');
         if (!res.ok) throw new Error('Failed to fetch students');
         const students = await res.json();
         setStudentsData(students);
@@ -90,7 +90,7 @@ const DailyAttendance = ({ setActiveAttendanceView }) => {
     };
 
     try {
-      const res = await fetch('http://localhost:8003/api/attendance/submit', {
+      const res = await fetch('http://localhost:5000/api/attendance/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

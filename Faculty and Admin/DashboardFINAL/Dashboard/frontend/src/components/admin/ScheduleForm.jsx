@@ -28,7 +28,7 @@ const ScheduleForm = ({ isOpen, setIsOpen, editingItem, setEditingItem, classroo
   useEffect(() => {
     async function fetchBookings() {
       try {
-        const res = await fetch('http://localhost:5000/api/bookings');
+        const res = await fetch('http://localhost:5000/api/admin/bookings');
         if (!res.ok) throw new Error('Failed to fetch bookings');
         const data = await res.json();
         setBookings(data);

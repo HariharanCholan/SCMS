@@ -35,7 +35,7 @@ const AdminDashboard = ({ user, onLogout, messages, updateMessages }) => {
   useEffect(() => {
     const fetchAlarmStatus = async () => {
       try {
-        const res = await fetch('http://localhost:8005/api/alarm-status');
+        const res = await fetch('http://localhost:5000/api/alerts/alarm-status');
         const data = await res.json();
         setAlarmActive(data.isActive);
         if (data.isActive && alarmRef.current) {
@@ -76,7 +76,7 @@ const AdminDashboard = ({ user, onLogout, messages, updateMessages }) => {
     localStorage.setItem('fireAlarmMessages', JSON.stringify(updated));
 
     if (messageType === 'Fire Alert') {
-      await fetch('http://localhost:8005/api/alarm-on', { method: 'POST' });
+      await fetch('http://localhost:5000/api/alerts/alarm-on', { method: 'POST' });
       if (alarmRef.current) {
         alarmRef.current.currentTime = 0;
         alarmRef.current.play();
@@ -112,7 +112,7 @@ const AdminDashboard = ({ user, onLogout, messages, updateMessages }) => {
       alarmRef.current.pause();
       alarmRef.current.currentTime = 0;
     }
-    await fetch('http://localhost:8005/api/alarm-off', { method: 'POST' });
+    await fetch('http://localhost:5000/api/alerts/alarm-off', { method: 'POST' });
     setAlarmActive(false);
   };
 

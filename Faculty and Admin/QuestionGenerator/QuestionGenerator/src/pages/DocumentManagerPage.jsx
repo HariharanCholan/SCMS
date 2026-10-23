@@ -26,7 +26,7 @@ const DocumentManagerPage = () => {
   useEffect(() => {
     const fetchDocuments = async () => {
       try {
-        const response = await fetch('http://localhost:8004/api/documents');
+        const response = await fetch('http://localhost:5000/api/generator/documents');
         const data = await response.json();
         setDocuments(data);
       } catch (error) {
@@ -39,7 +39,7 @@ const DocumentManagerPage = () => {
 
   const handleDeleteDocument = async (docId) => {
     try {
-      const res = await fetch(`http://localhost:8004/api/documents/${docId}`, {
+      const res = await fetch(`http://localhost:5000/api/generator/documents/${docId}`, {
         method: 'DELETE',
       });
       if (!res.ok) throw new Error('Delete failed');

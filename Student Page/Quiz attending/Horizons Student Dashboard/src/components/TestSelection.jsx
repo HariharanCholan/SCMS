@@ -8,7 +8,7 @@ const TestSelection = ({ onSelectTest }) => {
   useEffect(() => {
     const fetchTests = async () => {
       try {
-        const response = await fetch('http://localhost:8001/api/tests');
+        const response = await fetch('http://localhost:5000/api/quiz/tests');
         const data = await response.json();
         console.log('Fetched tests:', data);
         setTests(data);

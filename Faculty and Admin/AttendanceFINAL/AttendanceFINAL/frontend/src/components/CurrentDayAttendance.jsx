@@ -17,7 +17,7 @@ const CurrentDayAttendance = ({ setActiveAttendanceView }) => {
   useEffect(() => {
     const fetchToday = async () => {
       try {
-        const res = await fetch("http://localhost:8003/api/attendance/today");
+        const res = await fetch("http://localhost:5000/api/attendance/today");
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Invalid response');
 

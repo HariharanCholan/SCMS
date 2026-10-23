@@ -52,7 +52,7 @@ const UploadPage = () => {
       const text = await extractTextFromFile(selectedFile);
       setExtractedText(text);
 
-      const response = await fetch('http://localhost:8004/api/upload', {
+      const response = await fetch('http://localhost:5000/api/generator/upload', {
         method: 'POST',
         body: JSON.stringify({
           filename: selectedFile.name,

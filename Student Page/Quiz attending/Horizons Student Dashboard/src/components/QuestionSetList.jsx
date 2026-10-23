@@ -9,7 +9,7 @@ const QuestionSetList = () => {
   useEffect(() => {
     const fetchSets = async () => {
       try {
-        const response = await fetch('http://localhost:8001/api/getQuestionSets');
+        const response = await fetch('http://localhost:5000/api/quiz/documents');
         const data = await response.json();
         setSets(data);
       } catch (error) {

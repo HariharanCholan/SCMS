@@ -36,6 +36,8 @@ const handleSubmit = async (e) => {
   try {
     setIsLoading(true);
     await login(email, password, userType);
+    // Token is stored in localStorage by AuthContext login()
+    // Sub-portals will read localStorage.scms_token on load
 
     // ✅ Redirect based on user type
     if (userType === "admin") {
@@ -53,6 +55,7 @@ const handleSubmit = async (e) => {
     setIsLoading(false);
   }
 };
+
 
 
   const containerVariants = {

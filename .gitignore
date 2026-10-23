@@ -1,0 +1,42 @@
+# Node
+node_modules/
+dist/
+.cache/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Uploads (large binary files)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Model files (too large for git)
+**/finalmodel/*.bin
+**/finalmodel/*.pkl
+**/*.zip
+
+# Alarm state
+backend/alarm-status.json
+**/alarm-status.json
+**/alarm.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db

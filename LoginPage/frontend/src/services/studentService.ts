@@ -1,7 +1,7 @@
 // src/services/studentService.ts
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8000/api/students'; // Replace with your actual backend endpoint
+const API_BASE_URL = 'http://localhost:5000/api/students';
 
 // Types
 export interface Student {

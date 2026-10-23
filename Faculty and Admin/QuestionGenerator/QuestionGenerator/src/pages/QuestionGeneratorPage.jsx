@@ -18,7 +18,7 @@ const QuestionGeneratorPage = () => {
   useEffect(() => {
     async function fetchDocuments() {
       try {
-        const response = await fetch('http://localhost:8004/api/documents');
+        const response = await fetch('http://localhost:5000/api/generator/documents');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
         setDocuments(data);
@@ -70,7 +70,7 @@ const QuestionGeneratorPage = () => {
     toast({ title: 'Generating Questions...', description: 'Please wait.' });
 
     try {
-      const response = await fetch('http://localhost:8004/api/generate', {
+      const response = await fetch('http://localhost:5000/api/generator/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -125,7 +125,7 @@ const QuestionGeneratorPage = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:8004/api/saveQuestions', {
+      const response = await fetch('http://localhost:5000/api/generator/saveQuestions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

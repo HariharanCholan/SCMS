@@ -39,11 +39,11 @@ const AttendanceSystem = ({ onFeatureClick }) => {
   };
 
   useEffect(() => {
-    const base = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8003';
+    const base = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
     console.log('🔍 VITE_BACKEND_URL:', base);
     const fetchAll = async () => {
       try {
-        const base = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8003';
+        const base = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
         console.log("🔍 Fetching from:", base);
 
         const [attendanceRes, todayRes] = await Promise.all([

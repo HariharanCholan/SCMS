@@ -9,7 +9,7 @@ export function DashboardView({ onStatCardClick }) {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8002/api/student')
+    axios.get('http://localhost:5000/api/insights/student')
       .then(res => setStudents(res.data))
       .catch(err => console.error('Error fetching students:', err));
   }, []);

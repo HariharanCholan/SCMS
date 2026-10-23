@@ -8,7 +8,7 @@ export function ClassesListView({ title, onClassClick, renderBackButton }) {
   const [classList, setClassList] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8002/api/student')
+    axios.get('http://localhost:5000/api/insights/student')
       .then(res => {
         const fetchedStudents = res.data;
         setStudents(fetchedStudents);

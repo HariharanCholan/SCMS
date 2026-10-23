@@ -33,7 +33,7 @@ const StudentDashboard = ({ user, onLogout, initialMessages }) => {
   useEffect(() => {
     const pollAlarmStatus = async () => {
       try {
-        const res = await fetch('http://localhost:8005/api/alarm-status');
+        const res = await fetch('http://localhost:5000/api/alerts/alarm-status');
         const data = await res.json();
         setIsAlarmActive(data.isActive);
 
@@ -73,7 +73,7 @@ const StudentDashboard = ({ user, onLogout, initialMessages }) => {
         alarmAudioRef.current.pause();
         alarmAudioRef.current.currentTime = 0;
       }
-      await fetch('http://localhost:8005/api/alarm-off', { method: 'POST' });
+      await fetch('http://localhost:5000/api/alerts/alarm-off', { method: 'POST' });
       setAlarmPlaying(false);
       setShowFireAlertBox(false);
       setIsAlarmActive(false);

@@ -22,7 +22,8 @@ import { TestHistoryTable } from './components/tables/TestHistoryTable';
 import { getGrade } from './lib/utils';
 import { motion } from 'framer-motion';
 
-const API_BASE_URL = 'http://localhost:8006';
+const API_BASE_URL = 'http://localhost:5000';
+
 
 const App = () => {
   const [subjectData, setSubjectData] = useState([]);

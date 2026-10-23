@@ -6,7 +6,7 @@ export function SubjectsView() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:8006/api/subjects')
+    fetch('http://localhost:5000/api/subjects')
       .then(res => res.json())
       .then(data => {
         setSubjects(data.subjects || []);

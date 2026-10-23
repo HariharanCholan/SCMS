@@ -11,12 +11,16 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
 
+  const API_BASE = "http://localhost:5000";
+
   useEffect(() => {
-    // Load user session from MongoDB via backend
+    // Load user session from unified backend
     const fetchSession = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/session", {
+        const token = localStorage.getItem("scms_token");
+        const response = await axios.get(`${API_BASE}/api/auth/me`, {
           withCredentials: true,
+          headers: token ? { Authorization: `Bearer ${token}` } : {},
         });
         setCurrentUser(response.data.user);
       } catch (err) {
@@ -29,23 +33,23 @@ export const AuthProvider = ({ children }) => {
     fetchSession();
   }, []);
 
-  // Login function
+  // Login function — unified backend
   const login = async (email, password, userType) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/login",
-        {
-          email,
-          password,
-          userType,
-        },
-        { withCredentials: true } // Send cookies for session
+        `${API_BASE}/api/auth/login`,
+        { email, password, userType },
+        { withCredentials: true }
       );
 
       const user = response.data;
+      const { password: _, token, ...userWithoutPassword } = user;
 
-      // Remove password before storing in state
-      const { password: _, ...userWithoutPassword } = user;
+      // Store JWT for cross-port usage
+      if (token) {
+        localStorage.setItem("scms_token", token);
+        localStorage.setItem("scms_user", JSON.stringify(userWithoutPassword));
+      }
 
       setCurrentUser(userWithoutPassword);
 
@@ -54,7 +58,7 @@ export const AuthProvider = ({ children }) => {
         description: `Welcome back, ${userWithoutPassword.name}!`,
       });
 
-      return userWithoutPassword;
+      return { ...userWithoutPassword, token };
     } catch (error) {
       toast({
         title: "Login Failed",
@@ -68,10 +72,8 @@ export const AuthProvider = ({ children }) => {
   // Register function
   const register = async (userData) => {
     try {
-      const response = await axios.post("http://localhost:8000/api/register", userData);
+      const response = await axios.post(`${API_BASE}/api/auth/register`, userData);
       const user = response.data;
-
-      // Remove password before returning
       const { password: _, ...userWithoutPassword } = user;
 
       toast({
@@ -93,15 +95,18 @@ export const AuthProvider = ({ children }) => {
   // Logout function
   const logout = async () => {
     try {
+      const token = localStorage.getItem("scms_token");
       await axios.post(
-        "http://localhost:8000/api/logout",
+        `${API_BASE}/api/auth/logout`,
         {},
-        { withCredentials: true }
+        { withCredentials: true, headers: token ? { Authorization: `Bearer ${token}` } : {} }
       );
     } catch (err) {
       console.error("Logout failed on backend", err);
     }
 
+    localStorage.removeItem("scms_token");
+    localStorage.removeItem("scms_user");
     setCurrentUser(null);
 
     toast({
@@ -147,7 +152,7 @@ export const AuthProvider = ({ children }) => {
   // Login function
   const login = async (email, password, userType) => {
   try {
-    const response = await axios.post("http://localhost:5000/api/login", {
+    const response = await axios.post("http://localhost:5000/api/auth/login", {
       email,
       password,
       userType
@@ -224,7 +229,7 @@ export const AuthProvider = ({ children }) => {
   // Register function
   const register = async (userData) => {
   try {
-    const response = await axios.post("http://localhost:5000/api/register", userData);
+    const response = await axios.post("http://localhost:5000/api/auth/register", userData);
     const user = response.data;
 
     const { password: _, ...userWithoutPassword } = user;

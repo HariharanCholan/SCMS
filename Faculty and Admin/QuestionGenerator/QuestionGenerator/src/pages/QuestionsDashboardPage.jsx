@@ -33,7 +33,7 @@ const QuestionsDashboardPage = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    fetch('http://localhost:8004/api/questions/all')
+    fetch('http://localhost:5000/api/generator/questions/all')
       .then(res => res.json())
       .then(data => {
         setQuestionDocs(data);
@@ -63,7 +63,7 @@ const QuestionsDashboardPage = () => {
     updatedQuestions.splice(index, 1);
     setSelectedQuestions(updatedQuestions);
 
-    fetch(`http://localhost:8004/api/saveQuestions`, {
+    fetch(`http://localhost:5000/api/generator/saveQuestions`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -87,7 +87,7 @@ const QuestionsDashboardPage = () => {
 
   const handleDeleteDocument = async (docId) => {
     try {
-      const res = await fetch(`http://localhost:8004/api/questions/deleteDocument/${docId}`, {
+      const res = await fetch(`http://localhost:5000/api/generator/questions/deleteDocument/${docId}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -153,7 +153,7 @@ const QuestionsDashboardPage = () => {
       questions: Array.isArray(selectedDoc.questions) ? selectedDoc.questions : [],
     };
 
-    fetch('http://localhost:8004/api/questions/postStudentDocument', {
+    fetch('http://localhost:5000/api/generator/questions/postStudentDocument', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(postBody),

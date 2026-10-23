@@ -15,7 +15,7 @@ const AbsenteeList = ({ setActiveAttendanceView }) => {
   useEffect(() => {
     const fetchAbsentees = async () => {
       try {
-        const res = await fetch('http://localhost:8003/api/attendance/absentees/sessions');
+        const res = await fetch('http://localhost:5000/api/attendance/absentees/sessions');
         const data = await res.json();
 
         if (!data.success || !Array.isArray(data.sessions)) {

@@ -16,7 +16,7 @@ export default function StudentMarksEditor({ onBack }) {
   });
 
   useEffect(() => {
-    fetch('http://localhost:8002/api/student')
+    fetch('http://localhost:5000/api/insights/student')
       .then(res => res.json())
       .then(data => setStudents(data));
   }, []);
@@ -46,7 +46,7 @@ export default function StudentMarksEditor({ onBack }) {
   };
 
   const handleSave = async () => {
-    const res = await fetch(`http://localhost:8002/api/student/${selectedStudent._id}`, {
+    const res = await fetch(`http://localhost:5000/api/insights/student/${selectedStudent._id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...selectedStudent, subjects, department, className }),
@@ -174,7 +174,7 @@ export default function StudentMarksEditor({ onBack }) {
           </button>
           <button
             onClick={async () => {
-              const res = await fetch('http://localhost:8002/api/student', {
+              const res = await fetch('http://localhost:5000/api/insights/student', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newStudent),
@@ -188,7 +188,7 @@ export default function StudentMarksEditor({ onBack }) {
                   className: '',
                   subjects: [{ name: '', marks: 0 }],
                 });
-                const refreshed = await fetch('http://localhost:8002/api/student').then((r) => r.json());
+                const refreshed = await fetch('http://localhost:5000/api/insights/student').then((r) => r.json());
                 setStudents(refreshed);
               } else {
                 alert('❌ Failed to add student');

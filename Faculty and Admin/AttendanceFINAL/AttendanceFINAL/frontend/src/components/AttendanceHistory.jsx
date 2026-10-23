@@ -21,7 +21,7 @@ const AttendanceHistory = ({ setActiveAttendanceView }) => {
   useEffect(() => {
     const fetchSessions = async () => {
       try {
-        const res = await fetch("http://localhost:8003/api/attendance/sessions");
+        const res = await fetch("http://localhost:5000/api/attendance/sessions");
         const data = await res.json();
         if (!res.ok || !Array.isArray(data.sessions)) throw new Error(data?.error || "Invalid response");
         setSessions(data.sessions);

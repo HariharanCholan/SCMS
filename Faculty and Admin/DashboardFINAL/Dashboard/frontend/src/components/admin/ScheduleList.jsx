@@ -15,7 +15,7 @@ const ScheduleList = ({ schedule, setSchedule, setEditingItem, setIsDialogOpen }
 
   const handleDelete = async (id) => {
   try {
-    const res = await fetch(`http://localhost:5000/api/schedule/${id}`, {
+    const res = await fetch(`http://localhost:5000/api/admin/schedule/${id}`, {
       method: 'DELETE',
     });
 

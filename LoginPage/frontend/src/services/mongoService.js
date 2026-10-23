@@ -102,7 +102,7 @@ export const mongoService = {
 // src/services/mongoService.js
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8000/api/users"; // or your backend URL
+const BASE_URL = "http://localhost:5000/api/users";
 
 export const mongoService = {
   async getUsers() {
